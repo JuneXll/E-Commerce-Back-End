@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
   Product.findAll({
-    attributes : ['id', 'product_name', 'price','stock'],
+    attributes: ['id','product_name','price','stock'],
     include: [
       {
         model: Category,
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(productData => res.json(productData))
+    .then(productData=>res.json(productData))
     .catch(err=>{
       console.log(err);
       res.status(500).json(err);
@@ -47,17 +47,17 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
-    .then(productData=>{
-      if(!productData){
-        res.status(404).json({message:'No product found with id'});
-        return;
-      }
-      res.json(productData);
-    })
-      .catch(err=>{
-        console.log(err);
-        res.status(500).json(err);
-      });
+  .then(productData=>{
+    if(!productData){
+      res.status(404).json({message:'No product found with id'});
+      return;
+    }
+    res.json(productData);
+  })
+    .catch(err=>{
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // create new product
@@ -73,7 +73,7 @@ router.post('/', (req, res) => {
   Product.create({
     product_name: req.body.product_name,
     price: req.body.price,
-    stock: req.body.stock,
+    stock: req.body.price,
     category_id: req.body.category_id,
     tagIds: req.body.tagIds
   })
@@ -143,7 +143,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
   Product.destroy({
-    where: {
+    where:{
       id: req.params.id
     }
   })
@@ -152,7 +152,7 @@ router.delete('/:id', (req, res) => {
         res.status(404).json({message:'No product found with id'});
         return;
       }
-      res.json(productData);
+      res.json(productData)
     })
       .catch(err=>{
         console.log(err);
