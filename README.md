@@ -9,7 +9,7 @@ MySQL database and application backend for an E-commerce site. Built using MySQL
 
 ## Demonstration
 
-![gif](https://github.com/JuneXll/employee-tracker/blob/main/demo.gif)
+![gif](https://github.com/JuneXll/E-Commerce-Back-End/blob/main/demo.gif)
 
 ## Installation
 npm init
