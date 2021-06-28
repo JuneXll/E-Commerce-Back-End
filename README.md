@@ -1,6 +1,6 @@
 ## E-Commerce-Back-End
 ## Description
-A mysql database and application backend for an e-commerce site. Built using MySQL2, Express, Sequelize and dotenv.
+MySQL database and application backend for an E-commerce site. Built using MySQL2, Express, Sequelize and dotenv.
 
 ## Table of Contents
 - [Installation](#installation)
